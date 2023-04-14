@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>Mapscreen</title>
+<!--enables leaflet api-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+  <link href="style mapscreen.css" rel="stylesheet" type="text/css" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+</head>
+ <header>Detective Go!</header>
+  <style>
+
+  </style>
+  <body>
+  <div id="uwiMap"></div> 
+<!-- used to display clues to the player -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Welcome to Detective Go!</h4>
+    </div>
+    <div class="modal-body">
+      <p><b>Good day Detective. The Librarian, Michelle, claims to have witnessed a scuffle on the way to her car last night. The Campus had been awfully lively of late. Meet her in the library and take an eye-witness report. Your effectiveness has been a cause of concern to the Chief. It’s time to work for that paycheck! Go Detective go! </b>
+ </p>
+    </div>
+  </div>
+</div>
+<!-- alerts the user of an event -->
+<div id="inventoryUnlocked" class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+  <p> Character inventory unlocked!</p>
+  </div>
+    
+<div id="clue1" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Clue1</h4>
+    </div>
+    <div class="modal-body">
+<!--embeds a 3d model into modal-->
+     
+<img src="clues/dead body.png" alt ="Chalk Outline" style="width: 70%;height:60%;">
+      <p>Michelle described a violent altercation near Canada Hall at 7pm. After filtering through the sewers of a popular Instagram confession page, anonymous contributors seem to agree with the librarian. The old hag was onto something?! It’s time for a closer inspection around the dorms in Canada Hall. No peeking! Hold your breath if you don’t want to fail your monthly drug test, Detective, and wear fingerless gloves if you hate your partner. 
+</p>
+    </div>
+    
+    <div class="modal-footer">
+      <h3></h3>
+    </div>
+  </div> 
+
+</div>
+
+<div id="clue2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Clue2</h4>
+    </div>
+    <div class="modal-body">
+ <img src="clues/student ID.jpg" alt ="Student ID" style="width: 70%;height:60%;">
+      <p>Would you look at that! It’s a dead body and it looks recent. Is this what they mean by fresh meat? Put those gloves to good use and grab that Student ID. Our miscellaneous John Doe seems to be Boy Boy. You can’t make this stuff up folks. Call your parents and thank them. A few pictures to post on the inter– uh I meant to keep as evidence and we’ll leave the rest to the law enforcement. It looks like both him and the pie got stabbed given the stains on his clothes. Poor guy didn’t even get to eat that pie. Do you think it’s still crunchy? As if! I haven’t tasted a fresh pastry from them since they started making all the goods the evening prior. I wonder what kind of pie it is. We should go acquire ourselves some pastries. Let’s go Detective. </p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+
+</div>
+    
+<div id="clue3" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Clue3</h4>
+    </div>
+    <div class="modal-body">
+<img src="clues/chickenpie.png" alt ="Pastry Pie" style="width: 70%;height:60%;">
+      <p>Looks like our B.Boy made a stop just before closing and collected a chicken pie. A regular customer that regularly appears just before closing with a few dollars short. What a charming young man ! It’s a pity to see him go. If I was a baker, I’d be throwing a party today. Do you think that’s why Morris gave us free jam pies? Slap Morris the baker as suspect number one. Let’s arrest him and extort him for free food. Joking. Where’s your sense of humour, Detective? Where to next though? If I was a weapon where would I be hmm…. Knife. Stab. Dagger..Daa-? You don’t think? Life is never that easy. What do you think this is? Some kind of game? Maybe it is. Onwards, Detective ! 
+</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+
+</div>
+
+<div id="clue4" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Clue4</h4>
+    </div>
+    <div class="modal-body">
+ <img src="clues/dagger.jpeg" alt ="Dagger" style="width: 70%;height:60%;">
+      <p>Would you look at that, Detective ! There’s a bloody dagger conveniently located right on the ground. Is that blood and jelly on it? They stabbed the poor Boy Boy, pie and all. I would call it a clean crime if they didn't have a messy knife covered in blood and jelly. Snack time is over. A criminal must be caught. You really should lick the knife. Chicken jelly might be tasty. If I was a criminal, where would I go? Looks like the security guard sleeping there might have a clue. No sleep for the minimum wage. Disturbing the weary was worth it after all. Seems like he saw someone heading to the chemistry lab area.  If I was a criminal, what would I do?  Grab me some free chemicals to clean the blood off my hands. Lye and lies, the tales of law and chemistry. A straight shot across the court from here. We’re hot on the trail now, Detective, we can’t stop now. Let’s huff some chemicals and catch some criminals. 
+</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+
+</div>
+
+<div id="clue5" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Clue5</h4>
+    </div>
+    <div class="modal-body">
+ <img src="clues/acid.png" alt ="Acid" style="width: 70%;height:60%;">
+      <p>Crystal, the lab technician, claims she saw someone running from the chemical stores in the direction of the Industrial Research Institute. Two bottles of acid are missing . Based on his past track record, Mr. Boy seems to have been quite a loose cannon. Our lab technician was the victim of his latest haphazardness. Poor girl was doused in methylene blue and that does not wash out. Imagine the look on her poor blueberry face. Sucks to be her. I might have killed him too. The lab technicians don’t keep too close a record of inventory. What do you make of that Detective? Seems oddly convenient for criminal activities. Crystal, crystal clear that my dear Crystal is suspect number 2. It’s rather convenient to have a chemistry lab technician to remain on campus at 8pm. Red herring or not, we should still investigate. We should go to Caw Caw or was it Carrie. It’s something like that. Go on Detective, you know the way things go. You made it this far already.  
+</p>
+    </div>                
+    <div class="modal-footer">
+    </div>
+  </div>
+
+</div>
+
+<div id="clue6" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Clue6</h4>
+    </div>
+    <div class="modal-body">
+<img src="clues/broken bottle.png" alt ="Broken Bottle" style="width: 70%;height:60%;">
+      <p>Broken glass hmm…Come on detective, have a smell and a taste. It appears that our criminal compatriot left us a present. He really should have tried cleaning the knife with the chemicals. What a mess. The remnants of his little chemistry experiments smell like some sort of putrid acid. Your retirement was going to be boring anyways. A couple years less is for the greater good, Detective. We found the bottles but there’s no clue as to where to go next. Don’t worry, I received a convenient and anonymous tip off. Mr. Boy recently broke up with his ex-girlfriend. Our informant says it ended quite messily. I would have treated her better. She likes to hang out near the “pond”. I swear, the people that call that a pond are the same kind of people that think engineering is fun. Go wait for her like the great, totally not creepy, Detective you are.  
+</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+
+</div>
+
+<div id="clue7" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Clue7</h4>
+    </div>
+    <div class="modal-body">
+    <img src="clues/tshirt.png" alt ="Muddy and Bloody T-shirt" style="width: 70%;height:60%;">
+      <p>Since we have some time to kill, Detective, you might as well grab yourself a fishing rod. It’s time to catch a king sized salmon and maybe even a new disease. Good catch! All those weekends spent sitting alone for hours on end, with your thoughts in the middle of nowhere are finally paying off. You caught something! It’s a large tuna- No it isn't.Why would there be tuna here? We caught ourselves a bloody, white t-shirt. Size large and all the shades of brown from marinating in the pristine waters. That’s two sizes bigger than any fish you ever managed to catch, Detective.The shirt seems straight cut, like a man’s shirt.  A weapon, a shirt and possible motives. We’re not far from catching the murderer now. It looks like someone saw us and is trying to get as far away from us as possible. Do you like stairs? Give chase! She’s running to that tall engineering building. Everyone takes nice sunset photos from the roof of that. We should do some time.
+</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+
+</div>
+
+<div id="clue8" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h4>Clue8</h4>
+    </div>
+    <div class="modal-body">
+<img src="clues/crying emily.png" alt ="Crying Emily" style="width: 70%;height:60%;">
+<p>You caught her! I didn’t doubt you for a minute.....Okay, I doubted you every step of the way. Seems like we caught Mr Boy’s ex-girlfriend, Emily. I’ll spare you the less savoury details of her confession and give you the highlights. It seems as though they parted ways a few days ago over infidelity issues on the part of our murder victim. What a sorry state of affairs. Why did she run when she saw us? Emily claims that she was too stricken with grief and didn’t want to be interviewed. Your reputation precedes you, Detective. Or perhaps your fishing skills intimidated her? We may never know. I think we’ve gathered enough for an arrest. 
+</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+
+</div>
+   
+<script>
+       
+var map = L.map('uwiMap', {
+      center: [10.639952054925809, -61.39909224685563],
+      zoom: 17
+    });
+       
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,  
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);       
+
+let activeArea = [    
+      libraryCoords = [
+         [10.639900, -61.399587], // top left corner
+         [10.640150, -61.398821], // top right corner
+         [10.639407, -61.398469], // bottom right
+         [10.639130, -61.399220], // bottom left
+          ], 
+  
+      canadaHallCoords = [ 
+        [10.63829049, -61.397451], // top left corner
+        [10.63851567, -61.396899], // top right corner
+        [10.63793663, -61.396619], // bottom right
+        [10.63764282, -61.397113], // bottom left
+      ],
+
+      lindasCoords = [
+         [10.638599, -61.398680], // top left corner
+         [10.638653, -61.398490], // top right corner
+         [10.638470, -61.398408], // bottom right
+         [10.638391, -61.398604], // bottom left
+          ],
+  
+      daagaCoords = [ 
+        [10.643322, -61.398957], // top left corner
+        [10.643384, -61.398532], // top right corner
+        [10.642963, -61.398430], // bottom right
+        [10.642899, -61.398854], // bottom left
+      ],
+  
+      chemLabCoords = [ 
+         [10.6421115, -61.401918], // top left corner 1
+         [10.6423349, -61.400986], // top right corner 2
+         [10.6421002, -61.400955], // bottom right 5
+         [10.6419745, -61.401305], //4
+         [10.6416731, -61.401201], //3
+         [10.6415385, -61.401573], // bottom left 6
+          ],
+
+      caririCoords = [ 
+         [10.640802, -61.401198], // top left corner 
+         [10.640916, -61.400909], // top right corner 
+         [10.640259, -61.400581], // bottom right 
+         [10.640129, -61.400913], // bottom left 
+          ],
+
+      engineeringPondCoords = [
+          [10.639118, -61.40005],
+          [10.639237, -61.39972],
+          [10.639016, -61.39962],
+          [10.638889, -61.39993],
+           ],
+  
+      engineeringMD3Coords = [
+          [10.638877, -61.399994], // top left corner 
+          [10.639020, -61.399551], // top right corner
+          [10.638659, -61.399403], // bottom right
+          [10.638516599565353, -61.39984257604074], // bottom left 
+           ]
+       ];  
+
+  if (!navigator.geolocation) {
+            console.log("Your browser doesn't support geolocation feature!")
+        } else {
+            setInterval(() => {
+                navigator.geolocation.getCurrentPosition(getPosition)
+            }, 2000);
+        };
+       
+       var marker, circle, lat, long, accuracy, polygon;
+       let count; //used to advance location of active areas and control clues, also stored in cache
+
+window.onload = function () {
+  if(sessionStorage.getItem('clue')) {
+  count = parseInt(sessionStorage.getItem('clue'));
+  count = count -1; //drwas polygon
+  polygon = L.polygon(activeArea.at(count), {color: "purple"});
+  polygon.addTo(map);
+  count = count + 1; //controls clue
+} else {
+    
+  count = 0;
+  polygon = L.polygon(activeArea.at(count), {color: "blue"});
+  polygon.addTo(map);
+   count = 1;
+   modal = document.getElementById("myModal"); //display modal
+   modal.style.display = "block";
+  
+ }  
+} 
+  //gets user position, and updates it
+    function getPosition(position) {
+            lat = position.coords.latitude
+            long = position.coords.longitude
+            accuracy = position.coords.accuracy
+
+            if (marker) {
+                map.removeLayer(marker)
+            }
+
+            if (circle) {
+                map.removeLayer(circle)
+            }
+
+            marker = L.marker([lat, long])
+            .bindPopup('Current location');
+            circle = L.circle([lat, long], { radius: accuracy })
+
+            var featureGroup = L.featureGroup([marker, circle]).addTo(map)
+            
+            //goes to user location 
+            //map.flyTo([lat, long], 17);
+           
+  console.log("Your coordinate is: Lat: " + lat + " Long: " + long + " Accuracy: " + accuracy)
+
+            var userPosition = [lat, long];
+
+         //checks if user is inside the polygon/active area and sets the conditiions to trigger clues
+         if (polygon.getBounds().contains(userPosition) && count <=8) {
+            console.log('Point is inside the polygon!');
+           
+            console.log ("count");
+            
+            if (count===1){ 
+            alert = document.getElementById("inventoryUnlocked");
+            alert.style.display ="block";
+            
+            modal = document.getElementById("clue1");
+            modal.style.display = "block";
+
+          // // Select the button element and unlock it on talking to the librarian
+          // const characButton = document.getElementById('charac');
+          // // Remove the disabled attribute
+          // characButton.disabled = false;
+            }
+              
+            if (count===2){
+            modal = document.getElementById("clue2");
+            modal.style.display = "block"; 
+           }
+
+            if (count===3){
+            modal = document.getElementById("clue3");
+            modal.style.display ="block";
+            }
+
+            if(count===4){
+            modal = document.getElementById("clue4");
+            modal.style.display ="block";
+            }
+
+            if(count===5 ){
+            modal = document.getElementById("clue5");
+            modal.style.display ="block";
+            }
+
+            if(count===6){
+            modal = document.getElementById("clue6");
+            modal.style.display ="block";
+            }
+
+            if(count===7){
+            modal = document.getElementById("clue7");
+            modal.style.display ="block";
+            }
+
+            if(count===8 && count<9){
+            modal = document.getElementById("clue8");
+            modal.style.display ="block";
+            count = 0;
+
+            // // Select the button element
+            // const guessButton = document.getElementById('guess-button');
+            // // Remove the disabled attribute
+            // myButton.disabled = false;
+
+            // const clueButton = document.getElementById('clue-b');
+            // // Remove the disabled attribute
+            // clueButton.disabled = false;
+            }
+
+            //remove active area from map and activates the next area 
+            map.removeLayer(polygon);
+            polygon = L.polygon(activeArea.at(count), {color: "purple"}) ;
+            polygon.addTo(map);
+            
+           
+           //store current value incase porgress is lost
+            count++; //advances polygon uncomment 
+            sessionStorage.setItem('clue', count);
+            document.getElementById('count').textContent = count;
+
+         }
+          if (count >8){
+          
+          map.removeLayer(polygon);
+          }
+         
+       }
+
+</script>
+
+<!-- The overlay -->
+<div id="clueNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+<a href="javascript:void(0)" class="closebtn" onclick="closeClues()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+  <section id="content"></section>
+  </div>
+
+</div>
+  
+<!-- The guessing overlay option-->
+<div id="guessNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+<a href="javascript:void(0)" class="closebtn" onclick="closeGuess()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+  
+<p>
+Hello Detective! Based on the given clues, can you guess who the suspect is?Remember, you’re going to ruin someone’s life by making this judgement and you can even sacrifice your reputation. No pressure. Was it the butcher, the baker or the candlestick maker? I mean was it Morris, Crystal or Emily? Take your pick and send them to jail like the dregs of society they are.
+  <div>
+  <a href="lose1.html"><img src="suspects/lab tech.png"></a>
+  <a href="arrested.html" ><img src="suspects/baker.png"></a>
+  </div>
+  <div>
+   <a href="lose2.html"> <img src="suspects/eng student.png"></a>
+    </div>
+</p>
+ 
+  </div>
+
+</div>
+
+<script>
+//event handlers to open and close options given to user
+function openGuess() {
+  document.getElementById("guessNav").style.height = "100%";
+}
+function closeGuess() {
+  document.getElementById("guessNav").style.height = "0%";
+}
+  
+</script>
+
+<script src="mapscreen.js"></script>
+</body>
+  
+<footer>
+<!--triggers overlay containing information  -->
+<button type="button" id="clue-b" class="btn" onclick="window.location.href='clues.html';"><i class="fa fa-search"></i></button>
+
+<button type="button" id="charac" class="btn" onclick="window.location.href='character profiles.html';"><i class="fa fa-folder-open"></i></button>
+
+<button type="button" id="guess-button" class="btn" onclick="openGuess()"><i class="fa fa-question"></i></button>
+  
+</footer>
+
+</html>

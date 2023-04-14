@@ -1,0 +1,41 @@
+*{
+ box-sizing: border-box; 
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+/*   position: absolute;
+  top: 50%;
+  left: 50%; */
+/*   transform: translate(-50%, -50%); */
+  background: url("bg images/arrested.jpg") no-repeat center fixed;
+  
+  background-size: cover; 
+  height: 70%;
+  color: white;
+  width: 50%; 
+  overflow:hidden;
+}
+
+h1{
+  color: #a6a7a5;
+  font-size: 15vh;
+/*     text-align: center;  */
+/*   vertical-align: centre;  */
+  font-family:'Courier New', monospace;
+}
+
+.button {
+  position:bottom ;
+  background-color: #420000; /* Green */
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

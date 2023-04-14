@@ -1,0 +1,261 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+header{
+  height: 7%;
+/*   background-color: #6b0d0d; */
+/*   background-image: radial-gradient(circle, #690f0f, #5f0a0d, #550509, #4b0205, #420000); */
+  background-image: radial-gradient(circle, #420000, #350407, #270509, #190307, #000000); 
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  font-weight: 900;
+  letter-spacing: 1vmax;
+}
+
+footer {
+  height: 10%;
+  background-color: #420000;
+/*   background-color: #000; */
+/*   background-image: radial-gradient(circle, #420000, #350407, #270509, #190307, #000000); */
+/*   background-image: radial-gradient(circle, #000000, #190307, #270509, #350407, #420000); */
+  padding: 0;
+  font-family: 'Courier New', monospace;;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+#uwiMap {
+  height: 80%;
+  position: relative;
+  z-index:0;
+  }
+
+body {
+  height: 100%; 
+  padding: 0;
+	margin: 0;
+  overflow: hidden;
+}
+
+p1 {
+  overflow: none;
+  padding: 10px;
+  margin:10px;
+  text-align:center;
+/*   background-color: white; */
+  color: white;
+  font-size:20px;
+}
+
+/* The Modal (background) */
+.modal {
+  overflow: none; 
+  display: none; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  text-align: center;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */ 
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */ 
+
+}
+
+/* Modal Content */
+.modal-content {
+  border-radius: 20px;
+  overflow: auto;
+  position: relative;
+  background-color: #d9bb92; 
+  font-family:'Courier New', monospace;
+  margin-left: 10%;
+  margin-top: 10%;
+  font-size: 25px;
+  color: #0e0701;
+  padding: 0;
+  border: 0px;
+  height: 50%;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  text-align: center;
+  padding: 2px 2px;
+  background-color: #450202;
+  color: #f5d6d6;
+}
+
+.modal-body {
+  height: auto;
+  overflow: none;
+  padding: 5px 10px;}
+
+.modal-footer {
+  padding: 0;
+  background-color: #201192;
+  color: white;
+}
+
+.alert {
+  overflow: none;
+  z-index: 2;
+  display: none;
+  margin-bottom: 50px;
+  padding: 10px;
+  background-color: #c3b692;
+  color: #0f0f0f;
+}
+/* Style buttons */
+.btn {
+  float: left;
+  height: 100%;
+  width: 33.33%;
+  text-align: center;
+/*   background-color: #420000; /* Blue background  */
+  background-image: radial-gradient(circle, #000000, #190307, #270509, #350407, #420000);
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding-bottom: 15px; /* Some padding */
+  font-size: 25px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+.activeBtn {
+  float: left;
+  height: 100%;
+  width: 20%;
+  text-align: center;
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding-bottom: 15px; /* Some padding */
+  font-size: 25px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  background-color: #370c9d;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+/* Darker background on mouse-over */
+.btn:click {
+  background-color: #ffff61 ;
+  color: #231b1b;
+}
+
+.btn:hover{
+  background-color: #ffff61; 
+  color: #e5d2d2; 
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:click {
+  color: black;
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0,0,0, 0.9);
+  transition: 0.5s;
+  overflow-x: none;
+  overflow-y: scroll;
+  text-align: center;
+}
+
+.overlay-content {
+  overflow-x: none;
+  color: white;
+  z-index:2;
+  position: absolute;
+/*   top: 25%; */
+  height:70%;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 3vh;
+}
+
+.overlay a {
+  z-index: 2;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+/* .overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+} */
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
